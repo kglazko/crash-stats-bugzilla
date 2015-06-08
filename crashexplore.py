@@ -4,7 +4,7 @@ import json
 import simplejson
 
 r = requests.get('https://bugzilla.mozilla.org/rest/login?login=kglazko@mozilla.com&password=Jimdog90')
-print r.text
+#print r.text
 
 crash_sigs = []
 ##specify which fields I want 
@@ -15,8 +15,13 @@ search_results=requests.get(url)
 json_string = json.loads(search_results.text)
 
 for i in json_string['bugs']:
-	print (str(i['cf_crash_signature']).translate(None, ']@['))
-	crash_sigs.append(str(i['cf_crash_signature']).translate(None, ']@['))
+	#print (str(i['cf_crash_signature']).translate(None, ']@['))
+	crash_sigs.append(str(i['cf_crash_signature']).translate(None, ']@[').lstrip())
+
+for i in crash_sigs:
+	r = requests.get('https://crash-stats.mozilla.com/api/CrashesFrequency/?signature=' + i)
+	print i
+	print r.json()
 
 #j = json.loads(search_results)
 #json_string = json.dumps(j,sort_keys=True,indent=2)
