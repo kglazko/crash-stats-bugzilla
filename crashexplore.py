@@ -3,7 +3,7 @@ import base64
 import json
 import simplejson
 
-r = requests.get('https://bugzilla.mozilla.org/rest/login?login=kglazko@mozilla.com&password=Testtest1')
+r = requests.get('https://bugzilla.mozilla.org/rest/login?login=fakebugzilla@gmail.com&password=Testtest1')
 #print r.text
 
 #Making a list to hold strings of crash signatures, it's empty right now.
