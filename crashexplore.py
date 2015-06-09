@@ -2,7 +2,8 @@ import requests
 import base64
 import json
 import simplejson
-import re
+import urllib
+
 
 
 r = requests.get('https://bugzilla.mozilla.org/rest/login?login=fakebugzilla@gmail.com&password=Testtest1')
@@ -10,6 +11,7 @@ r = requests.get('https://bugzilla.mozilla.org/rest/login?login=fakebugzilla@gma
 
 #Making a list to hold strings of crash signatures, it's empty right now.
 crash_sigs = []
+url_list = []
 
 #specify which fields I want to send to the bugzilla API
 url = 'https://bugzilla.mozilla.org/rest/bug?include_fields=id,cf_crash_signature,status&f1=cf_tracking_firefox39&f2=cf_crash_signature&o1=equals&o2=isnotempty&resolution=---&v1=%2B'
@@ -33,12 +35,16 @@ for i in json_string['bugs']:
 
 print str(len(crash_sigs)) + " signatures in the list."
 
+#This is where I convert my crash sigs into 'url friendly' format
+for j in crash_sigs:
+	temp = urllib.quote_plus(j)
+	url_list.append(temp)
 
 
 	#.translate(None, '[@]').lstrip()
 
-#Going through the crash_sigs strings, sending them to the crash-stats API, and returning a JSON object of their crash frequencies.
-for i in crash_sigs:
+#Going through the crash_sigs strings, sending them to the crash-stats API, and returning a JSON object of their crash frequencies. And it doesn't work!
+for i in url_list:
 	r = requests.get('https://crash-stats.mozilla.com/api/CrashesFrequency/?signature=' + i)
 	print i
 	print r.json()
