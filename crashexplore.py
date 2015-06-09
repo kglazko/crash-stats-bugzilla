@@ -2,6 +2,8 @@ import requests
 import base64
 import json
 import simplejson
+import re
+
 
 r = requests.get('https://bugzilla.mozilla.org/rest/login?login=fakebugzilla@gmail.com&password=Testtest1')
 #print r.text
@@ -19,7 +21,21 @@ json_string = json.loads(search_results.text)
 #I'm parsing the JSON string and grabbing the crash signatures from the bugs, and I'm stripping out unneeded spaces and symbols.
 #Also populating the list that I made earlier.
 for i in json_string['bugs']:
-	crash_sigs.append(str(i['cf_crash_signature']).translate(None, ']@[').lstrip())
+	temp = str(i['cf_crash_signature'])
+	if temp.count('[@') > 1:
+		temps = temp.split('[@')
+		for i in temps:
+			i = i.translate(None, ']').lstrip()
+			crash_sigs.append(i)
+	elif temp.count('[@') == 1:
+		temp = temp.translate(None, '[@]').lstrip()
+		crash_sigs.append(temp)
+
+print str(len(crash_sigs)) + " signatures in the list."
+
+
+
+	#.translate(None, '[@]').lstrip()
 
 #Going through the crash_sigs strings, sending them to the crash-stats API, and returning a JSON object of their crash frequencies.
 for i in crash_sigs:
