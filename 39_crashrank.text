@@ -1,0 +1,34 @@
+Bug 1019063 has a crash ranked:
+34 in: 39.0b
+32 in: 39.0b1
+33 in: 39.0b2
+33 in: 39.0b3
+Bug 1106264 has a crash ranked:
+9 in: 39.0b
+15 in: 39.0b1
+9 in: 39.0b2
+9 in: 39.0b3
+Bug 1159751 has a crash ranked:
+4 in: 39.0b
+5 in: 39.0b1
+4 in: 39.0b2
+4 in: 39.0b3
+Bug 1160157 has a crash ranked:
+134 in: 39.0b
+87 in: 39.0b1
+126 in: 39.0b2
+162 in: 39.0b3
+Bug 1170141 has a crash ranked:
+82 in: 39.0b
+54 in: 39.0b1
+72 in: 39.0b2
+102 in: 39.0b3
+Bug 1170676 has a crash ranked:
+16 in: 39.0b
+16 in: 39.0b1
+16 in: 39.0b2
+17 in: 39.0b3
+Bug 1171629 has a crash ranked:
+26 in: 39.0b
+25 in: 39.0b2
+21 in: 39.0b3

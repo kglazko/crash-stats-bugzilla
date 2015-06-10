@@ -12,7 +12,11 @@ class Bug:
 		self.iD = iD
 		self.sigList = []
 		self.topCrash = []
+		self.topCrash.append([])
+		self.topCrash.append([])
 
+
+file_object = open("39_crashrank.text", "wb")
 url = 'https://bugzilla.mozilla.org/rest/bug?include_fields=id,cf_crash_signature,status&f1=cf_tracking_firefox39&f2=cf_crash_signature&o1=equals&o2=isnotempty&resolution=---&v1=%2B'
 search_results=requests.get(url)
 json_string = json.loads(search_results.text)
@@ -44,7 +48,8 @@ for k in json_string2['crashes']:
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
-				l.topCrash.append(str(k["currentRank"] + 1))
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b")
 
 url3 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b1&crash_type=Browser'
 crash_results3 = requests.get(url3)
@@ -56,7 +61,8 @@ for k in json_string3['crashes']:
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
-				l.topCrash.append(str(k["currentRank"] + 1))
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b1")
 
 url4 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b2&crash_type=Browser'
 crash_results4 = requests.get(url4)
@@ -68,7 +74,8 @@ for k in json_string4['crashes']:
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
-				l.topCrash.append(str(k["currentRank"] + 1))
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b2")
 
 url5 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b3&crash_type=Browser'
 crash_results5 = requests.get(url5)
@@ -80,7 +87,8 @@ for k in json_string5['crashes']:
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
-				l.topCrash.append(str(k["currentRank"] + 1))
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b3")
 
 url6 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b4&crash_type=Browser'
 crash_results6 = requests.get(url6)
@@ -92,12 +100,21 @@ for k in json_string6['crashes']:
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
-				l.topCrash.append(str(k["currentRank"] + 1))
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b4")
 
 
 
 for bugs in bugList:
-	if len(bugs.topCrash) > 0:
-		print "Bug " + bugs.iD + " has " + str(len(bugs.sigList)) + " crash signatures, and their ranks are: "
-		for crashes in bugs.topCrash:
-			print crashes
+	if len(bugs.topCrash[0]) > 0:
+		print "Bug " + bugs.iD + " has a crash ranked: " 
+		file_object.write("Bug " + bugs.iD + " has a crash ranked:\n")
+		count = len(bugs.topCrash[0])
+		for l in range(0, count):
+			print (bugs.topCrash[0][l]),
+			file_object.write(bugs.topCrash[0][l]),
+			print " in: " + (bugs.topCrash[1][l])
+			file_object.write(" in: " + (bugs.topCrash[1][l]) + "\n")
+
+file_object.close()
+			
