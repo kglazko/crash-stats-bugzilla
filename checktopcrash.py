@@ -3,6 +3,8 @@ import base64
 import json
 import simplejson
 import urllib
+import csv
+import sys
 
 
 bugList = []
@@ -14,6 +16,10 @@ class Bug:
 		self.topCrash = []
 		self.topCrash.append([])
 		self.topCrash.append([])
+
+
+#CSV CODE
+f = open('topcrash.csv', 'wt')
 
 
 file_object = open("39_crashrank.text", "wb")
@@ -94,6 +100,7 @@ url6 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b4
 crash_results6 = requests.get(url6)
 json_string6 = json.loads(crash_results6.text)
 
+
 for k in json_string6['crashes']:
 	tempSig = str(k["signature"])
 	#print tempSig
@@ -103,8 +110,18 @@ for k in json_string6['crashes']:
 				l.topCrash[0].append(str(k["currentRank"] + 1))
 				l.topCrash[1].append("39.0b4")
 
+### THIS IS THE EXCEL PART ###
+writer = csv.writer(f)
+writer.writerow(('Bug Id', 'FF Version', 'Rank'))
+for bugs in bugList:
+	for m in range (0, len(bugs.topCrash[0])):
+		writer.writerow( (bugs.iD,bugs.topCrash[1][m], bugs.topCrash[0][m]) )
+
+f.close()
+######
 
 
+#### THIS IS THE COMMAND LINE AND TEXT FILE PART ####
 for bugs in bugList:
 	if len(bugs.topCrash[0]) > 0:
 		print "Bug " + bugs.iD + " has a crash ranked: " 
@@ -116,5 +133,6 @@ for bugs in bugList:
 			print " in: " + (bugs.topCrash[1][l])
 			file_object.write(" in: " + (bugs.topCrash[1][l]) + "\n")
 
+
 file_object.close()
-			
+#########		
