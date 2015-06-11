@@ -20,6 +20,7 @@ class Bug:
 
 #CSV CODE
 f = open('topcrash.csv', 'wt')
+f2 = open('top10.csv', 'wt')
 
 
 file_object = open("39_crashrank.text", "wb")
@@ -34,11 +35,11 @@ for i in json_string['bugs']:
 	if temp.count('[@') > 1:
 		temps = temp.split('[@')
 		for i in temps:
-			i = i.translate(None, ']').lstrip()
+			i = i.translate(None, ']').lstrip().rstrip()
 			tempBug.sigList.append(i)
 	elif temp.count('[@') == 1:
 		temp = temp[2:]
-		temp = temp.translate(None, ']').lstrip()
+		temp = temp.translate(None, ']').lstrip().rstrip()
 		tempBug.sigList.append(temp)
 
 	bugList.append(tempBug)
@@ -102,11 +103,13 @@ json_string6 = json.loads(crash_results6.text)
 
 
 for k in json_string6['crashes']:
-	tempSig = str(k["signature"])
+	tempSig = str(k['signature'])
 	#print tempSig
+	#print k['currentRank']
 	for l in bugList:
 		for x in l.sigList:
 			if x == tempSig:
+				print tempSig
 				l.topCrash[0].append(str(k["currentRank"] + 1))
 				l.topCrash[1].append("39.0b4")
 
@@ -118,8 +121,16 @@ for bugs in bugList:
 		writer.writerow( (bugs.iD,bugs.topCrash[1][m], bugs.topCrash[0][m]) )
 
 f.close()
+
+writer = csv.writer(f2)
+writer.writerow(('Bug Id','FF Version', 'Rank'))
+for bugs in bugList:
+	for m in range (0, len(bugs.topCrash[0])):
+		if int(bugs.topCrash[0][m])<=10:
+			writer.writerow((bugs.iD, bugs.topCrash[1][m], bugs.topCrash[0][m])) 
 ######
 
+f2.close()
 
 #### THIS IS THE COMMAND LINE AND TEXT FILE PART ####
 for bugs in bugList:
@@ -136,3 +147,5 @@ for bugs in bugList:
 
 file_object.close()
 #########		
+
+#####Now we just want to output the top 10 crashers in Excel###
