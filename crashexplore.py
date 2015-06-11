@@ -27,11 +27,11 @@ for i in json_string['bugs']:
 	if temp.count('[@') > 1:
 		temps = temp.split('[@')
 		for i in temps:
-			i = i.translate(None, ']').lstrip()
+			i = i.translate(None, ']').lstrip().rstrip()
 			crash_sigs.append(i)
 	elif temp.count('[@') == 1:
 		temp = temp[2:]
-		temp = temp.translate(None, ']').lstrip()
+		temp = temp.translate(None, ']').lstrip().rstrip()
 		crash_sigs.append(temp)
 
 print str(len(crash_sigs)) + " signatures in the list."
