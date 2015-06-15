@@ -113,6 +113,19 @@ for k in json_string6['crashes']:
 				l.topCrash[0].append(str(k["currentRank"] + 1))
 				l.topCrash[1].append("39.0b4")
 
+url7 = 'https://crash-stats.mozilla.com/api/TCBS/?product=Firefox&version=39.0b5&crash_type=Browser'
+crash_results7 = requests.get(url7)
+json_string7 = json.loads(crash_results7.text)
+for k in json_string7['crashes']:
+	tempSig = str(k['signature'])
+	#print tempSig
+	#print k['currentRank']
+	for l in bugList:
+		for x in l.sigList:
+			if x == tempSig:
+				print tempSig
+				l.topCrash[0].append(str(k["currentRank"] + 1))
+				l.topCrash[1].append("39.0b5")
 ### THIS IS THE EXCEL PART ###
 writer = csv.writer(f)
 writer.writerow(('Bug Id', 'FF Version', 'Rank'))
