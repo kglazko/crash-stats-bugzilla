@@ -6,6 +6,14 @@ import urllib
 import csv
 import sys
 import datetime
+import smtplib
+import os
+import email
+import email.encoders
+import email.mime.text
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.MIMEText import MIMEText
 
 
 days = sys.argv[1]
@@ -13,6 +21,8 @@ days = sys.argv[1]
 version = str(sys.argv[2])
 
 daysList = []
+
+sendEmail = str(sys.argv[3])
 
 print days
 today = datetime.date.today()
@@ -24,6 +34,7 @@ for i in range (0,int(days)):
 	daysList.append(day)
 
 end_date = daysList[0] + one_day
+start_date = daysList[len(daysList) -1]
  
 #CSV Code Set-Up
 #CSV CODE
@@ -104,9 +115,9 @@ for i in range (0, len(url_list[0])):
 						
 
 
-for b in bugList:
-	for c in b.sigs:
-		print c.iD + " has had " + str(c.crashWeek) + " crashes last week."
+#for b in bugList:
+	#for c in b.sigs:
+		#print c.iD + " has had " + str(c.crashWeek) + " crashes last week."
 			
 
 writer = csv.writer(f)
@@ -116,3 +127,34 @@ for bugs in bugList:
 		writer.writerow( (bugs.iD,bugs.sigs[m].iD, bugs.sigs[m].crashWeek) )
 
 f.close()
+
+
+
+
+
+##### EMAIL SECTION ONLY #####
+if sendEmail == 'y':
+	sender = 'fakebugzilla@gmail.com'
+	receivers = 'kglazko@mozilla.com'
+	subject = 'Crashes for Dates ' + str(start_date) + " to " + str(today)
+	message = "Version " + version + '\n'+ "Bug I.D.      # of Crashes\n"
+	for b in bugList:
+		temp = 0
+		for c in b.sigs:
+			temp = temp + c.crashWeek
+		message = message + (str(b.iD)) + '      ' + (str(c.crashWeek)) + '\n'
+	msg = email.MIMEMultipart.MIMEMultipart()
+	msg['From'] = sender
+	msg['To'] = receivers
+	msg['Date'] = email.Utils.formatdate(localtime=True)
+	msg['Subject'] = subject
+	msg.attach(email.MIMEText.MIMEText(message))
+	try:
+		smtpObj = smtplib.SMTP('smtp.gmail.com:587')
+		smtpObj.ehlo()
+		smtpObj.starttls()
+		smtpObj.login('fakebugzilla@gmail.com','Testtest1')
+		smtpObj.sendmail(sender, receivers, msg.as_string())      
+		print "Successfully sent email"
+	except smtplib.SMTPException:
+   		print "Error: unable to send email"

@@ -1,56 +1,56 @@
 Bug Id,Crash Signature,# of Crashes
-720991,"nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*, nsTArrayDefaultAllocator>&)",218
-720991,"@0x0 | nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*, nsTArrayDefaultAllocator>&)",6
-720991,nsXBLService::GetBinding,26
-720991,"nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*>&)",1224
-720991,"@0x0 | nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*>&)",26
-1029671,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | jArray<wchar_t, int>::newJArray(int)",771
-1029671,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | jArray<T>::newJArray(int),1588
-1029671,OOM | large | mozalloc_abort | mozalloc_handle_oom | moz_xmalloc | jArray<T>::newJArray,1
-1106264,"mozalloc_abort(char const* const) | NS_DebugBreak | nsSameProcessAsyncMessageBase::nsSameProcessAsyncMessageBase(JSContext*, nsAString_internal const&, mozilla::dom::StructuredCloneData const&, JS::Handle<JSObject*>, nsIPrincipal*)",1923
-1106264,"OOM | large | NS_ABORT_OOM(unsigned int) | nsSameProcessAsyncMessageBase::nsSameProcessAsyncMessageBase(JSContext*, nsAString_internal const&, mozilla::dom::StructuredCloneData const&, JS::Handle<T>, nsIPrincipal*)",1300
+720991,"nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*, nsTArrayDefaultAllocator>&)",0
+720991,"@0x0 | nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*, nsTArrayDefaultAllocator>&)",0
+720991,nsXBLService::GetBinding,5
+720991,"nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*>&)",0
+720991,"@0x0 | nsXBLService::GetBinding(nsIContent*, nsIURI*, bool, nsIPrincipal*, bool*, nsXBLBinding**, nsTArray<nsIURI*>&)",0
+1029671,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | jArray<wchar_t, int>::newJArray(int)",0
+1029671,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | jArray<T>::newJArray(int),877
+1029671,OOM | large | mozalloc_abort | mozalloc_handle_oom | moz_xmalloc | jArray<T>::newJArray,0
+1106264,"mozalloc_abort(char const* const) | NS_DebugBreak | nsSameProcessAsyncMessageBase::nsSameProcessAsyncMessageBase(JSContext*, nsAString_internal const&, mozilla::dom::StructuredCloneData const&, JS::Handle<JSObject*>, nsIPrincipal*)",0
+1106264,"OOM | large | NS_ABORT_OOM(unsigned int) | nsSameProcessAsyncMessageBase::nsSameProcessAsyncMessageBase(JSContext*, nsAString_internal const&, mozilla::dom::StructuredCloneData const&, JS::Handle<T>, nsIPrincipal*)",818
 1106264,OOM | large | NS_ABORT_OOM | nsSameProcessAsyncMessageBase::nsSameProcessAsyncMessageBase,0
-1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",3630
-1127270,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",311
-1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",8753
-1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",3630
+1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",1340
+1127270,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",122
+1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",3212
+1127270,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::layers::CompositorParent::ShutDown()",1340
 1127270,shutdownhang | ntdll.dll@0x3c6bc,0
 1127270,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, char const*, wchar_t cons",0
-1127270,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | nsThread::Shutdown()",218
-1129455,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::MediaShutdownManager::Shutdown()",842
+1127270,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | nsThread::Shutdown()",95
+1129455,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::MediaShutdownManager::Shutdown()",346
 1129455,shutdownhang | ntdll.dll@0x3c6bc,0
-1135562,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::MediaShutdownManager::Shutdown()",842
+1135562,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::MediaShutdownManager::Shutdown()",346
 1135562,shutdownhang | ntdll.dll@0x3c6bc,0
-1138520,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, char const*, wchar_t const*)",505
+1138520,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, char const*, wchar_t const*)",192
 1138520,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, char const*, wc...",0
 1138520,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, cha",0
 1138520,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::dom::ContentParent::Observe(nsISupports*, char const*, wchar_t const*)",0
-1139497,zzz_AsmCodeRange_Begin | BaseThreadInitThunk,549
-1139497,RtlpCallQueryRegistryRoutine | BaseThreadInitThunk,1145
-1139497,zzz_AsmCodeRange_End | BaseThreadInitThunk,69
-1139497,RtlQueryRegistryValues | BaseThreadInitThunk,26
-1141089,"mozilla::ContainerState::InvalidateForLayerChange(nsDisplayItem*, mozilla::layers::PaintedLayer*)",18686
-1141089,mozilla::ContainerState::ProcessDisplayItems(nsDisplayList*),265
-1146313,mozilla::layers::CompositorD3D11::UpdateConstantBuffers(),6362
-1146313,NOutermost::CDevice::FlushDeletionPool(bool),379
-1158189,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",1374
-1158189,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",13611
-1158189,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",60
+1139497,zzz_AsmCodeRange_Begin | BaseThreadInitThunk,259
+1139497,RtlpCallQueryRegistryRoutine | BaseThreadInitThunk,447
+1139497,zzz_AsmCodeRange_End | BaseThreadInitThunk,28
+1139497,RtlQueryRegistryValues | BaseThreadInitThunk,9
+1141089,"mozilla::ContainerState::InvalidateForLayerChange(nsDisplayItem*, mozilla::layers::PaintedLayer*)",7330
+1141089,mozilla::ContainerState::ProcessDisplayItems(nsDisplayList*),111
+1146313,mozilla::layers::CompositorD3D11::UpdateConstantBuffers(),790
+1146313,NOutermost::CDevice::FlushDeletionPool(bool),47
+1158189,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",453
+1158189,"shutdownhang | WaitForSingleObjectEx | WaitForSingleObject | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",5036
+1158189,"shutdownhang | WaitForSingleObjectEx | PR_Wait | mozilla::ReentrantMonitor::Wait(unsigned int) | nsThread::ProcessNextEvent(bool, bool*) | NS_ProcessNextEvent(nsIThread*, bool) | mozilla::net::nsHttpConnectionMgr::Shutdown()",23
 1158189,shutdownhang | ntdll.dll@0x3c6bc,0
-1170141,nprpffbrowserrecordext.dll@0x3d0b,1517
-1170141,nprndlffbrowserrecordext.dll@0xf3a4,1882
-1170141,nprndlffbrowserrecordext.dll@0xf394,259
-1170143,igd10umd32.dll@0x280a1,7083
-1170143,igd10umd64.dll@0x3045b,130
-1170651,"js::jit::GetPropertyIC::update(JSContext*, JS::Handle<JSScript*>, unsigned int, JS::Handle<JSObject*>, JS::MutableHandle<JS::Value>)",220
-1170651,"js::jit::GetPropertyIC::update(JSContext*, JS::Handle<T>, unsigned int, JS::Handle<T>, JS::MutableHandle<T>)",540
+1170141,nprpffbrowserrecordext.dll@0x3d0b,506
+1170141,nprndlffbrowserrecordext.dll@0xf3a4,676
+1170141,nprndlffbrowserrecordext.dll@0xf394,114
+1170143,igd10umd32.dll@0x280a1,1214
+1170143,igd10umd64.dll@0x3045b,15
+1170651,"js::jit::GetPropertyIC::update(JSContext*, JS::Handle<JSScript*>, unsigned int, JS::Handle<JSObject*>, JS::MutableHandle<JS::Value>)",0
+1170651,"js::jit::GetPropertyIC::update(JSContext*, JS::Handle<T>, unsigned int, JS::Handle<T>, JS::MutableHandle<T>)",333
 1170651,js::jit::GetPropertyIC::update,0
-1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::net::CacheFileMetadata::OnDataRead(mozilla::net::CacheFileHandle*, char*, nsresult)",816
-1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::WriteMetadata(unsigned int, mozilla::net::CacheFileMetadataListener*)",1422
-1171724,OOM | large | mozalloc_abort(char const*) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::SyncReadMetadata(nsIFile*),68
-1171724,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::net::CacheFileMetadata::EnsureBuffer(unsigned int),43
-1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | nsCOMPtr<nsIFile>::~nsCOMPtr<nsIFile>() | mozilla::net::CacheFileMetadata::WriteMetadata(unsigned int, mozilla::net::CacheFileMetadataListener*)",9
-1171724,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::SyncReadMetadata(nsIFile*),7
-1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::Telemetry::Accumulate(mozilla::Telemetry::ID, unsigned int)",394
-1173579,mozalloc_abort(char const* const) | NS_DebugBreak | gfxFontGroup::GetDefaultFont(),1637
-1173579,mozalloc_abort(char const*) | Abort | NS_DebugBreak | gfxFontGroup::GetDefaultFont(),1950
+1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::net::CacheFileMetadata::OnDataRead(mozilla::net::CacheFileHandle*, char*, nsresult)",400
+1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::WriteMetadata(unsigned int, mozilla::net::CacheFileMetadataListener*)",536
+1171724,OOM | large | mozalloc_abort(char const*) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::SyncReadMetadata(nsIFile*),22
+1171724,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::net::CacheFileMetadata::EnsureBuffer(unsigned int),13
+1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | nsCOMPtr<nsIFile>::~nsCOMPtr<nsIFile>() | mozilla::net::CacheFileMetadata::WriteMetadata(unsigned int, mozilla::net::CacheFileMetadataListener*)",0
+1171724,OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xmalloc | mozilla::net::CacheFileMetadata::SyncReadMetadata(nsIFile*),0
+1171724,"OOM | large | mozalloc_abort(char const* const) | mozalloc_handle_oom(unsigned int) | moz_xrealloc | mozilla::Telemetry::Accumulate(mozilla::Telemetry::ID, unsigned int)",12
+1173579,mozalloc_abort(char const* const) | NS_DebugBreak | gfxFontGroup::GetDefaultFont(),657
+1173579,mozalloc_abort(char const*) | Abort | NS_DebugBreak | gfxFontGroup::GetDefaultFont(),679
