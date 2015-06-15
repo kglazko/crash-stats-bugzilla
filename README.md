@@ -5,7 +5,11 @@ Welcome to the crash-stats-bugzilla wiki! This is a multi-script project that wi
 Good question. I'll explain each of the current scripts. 
   1. CheckTopCrash.py is a script designed to return 39+ bugs with crash signatures and their crash rankings for each version. It is currently working with data export going to the command line, a text file, and a CSV.
 
-  2.  CrashExplore.py is currently retrieving a list of 39+ bugs with crash signatures and returning information about those bugs. It isn't currently working properly because of conversion from Python strings into URL-friendly encoding. Also, the data it is returning isn't analyzed or parsed and comes out as a giant JSON blob.
+  2.  CrashExplore.py is currently retrieving a list of 39+ bugs, collecting their crash signatures, and returning the number of crashes per signature for the given time frame.
+  
+  3. InteractiveCrashNumber.py is a new program that you run with command line arguments.
+          InteractiveCrashNumber.py [numberOfDaysSinceToday] [Version]
+
 
   3.  Ah, got you! There is no actual program for grabbing and sentiment analyzing user comments, but there will be! It is one of my personal goals for this project.
 
