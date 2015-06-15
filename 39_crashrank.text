@@ -1,12 +1,15 @@
 Bug 720991 has a crash ranked:
 234 in: 39.0b1
 264 in: 39.0b2
+Bug 722030 has a crash ranked:
+183 in: 39.0b5
 Bug 1019063 has a crash ranked:
 26 in: 39.0b
 43 in: 39.0b1
 27 in: 39.0b2
 28 in: 39.0b3
 38 in: 39.0b4
+35 in: 39.0b5
 Bug 1029671 has a crash ranked:
 58 in: 39.0b
 65 in: 39.0b
@@ -17,6 +20,7 @@ Bug 1029671 has a crash ranked:
 40 in: 39.0b3
 154 in: 39.0b3
 35 in: 39.0b4
+29 in: 39.0b5
 Bug 1106264 has a crash ranked:
 23 in: 39.0b
 31 in: 39.0b
@@ -24,6 +28,7 @@ Bug 1106264 has a crash ranked:
 17 in: 39.0b2
 13 in: 39.0b3
 10 in: 39.0b4
+10 in: 39.0b5
 Bug 1127270 has a crash ranked:
 25 in: 39.0b
 283 in: 39.0b
@@ -33,6 +38,7 @@ Bug 1127270 has a crash ranked:
 20 in: 39.0b2
 24 in: 39.0b3
 32 in: 39.0b4
+24 in: 39.0b5
 Bug 1129455 has a crash ranked:
 39 in: 39.0b2
 Bug 1135562 has a crash ranked:
@@ -43,12 +49,14 @@ Bug 1141089 has a crash ranked:
 189 in: 39.0b2
 136 in: 39.0b3
 164 in: 39.0b4
+21 in: 39.0b5
 Bug 1145143 has a crash ranked:
 8 in: 39.0b
 6 in: 39.0b1
 16 in: 39.0b2
 9 in: 39.0b3
 5 in: 39.0b4
+5 in: 39.0b5
 Bug 1146313 has a crash ranked:
 2 in: 39.0b
 66 in: 39.0b
@@ -60,6 +68,7 @@ Bug 1146313 has a crash ranked:
 39 in: 39.0b3
 Bug 1153929 has a crash ranked:
 274 in: 39.0b
+39 in: 39.0b5
 Bug 1158189 has a crash ranked:
 6 in: 39.0b
 107 in: 39.0b
@@ -67,20 +76,24 @@ Bug 1158189 has a crash ranked:
 6 in: 39.0b2
 6 in: 39.0b3
 6 in: 39.0b4
+6 in: 39.0b5
 Bug 1159751 has a crash ranked:
 4 in: 39.0b
 8 in: 39.0b1
 4 in: 39.0b2
 4 in: 39.0b3
 3 in: 39.0b4
+3 in: 39.0b5
 Bug 1160157 has a crash ranked:
 118 in: 39.0b
 38 in: 39.0b1
 139 in: 39.0b2
 124 in: 39.0b3
 177 in: 39.0b4
+111 in: 39.0b5
 Bug 1167069 has a crash ranked:
 192 in: 39.0b1
+142 in: 39.0b5
 Bug 1167248 has a crash ranked:
 166 in: 39.0b2
 Bug 1170141 has a crash ranked:
@@ -99,6 +112,9 @@ Bug 1170141 has a crash ranked:
 24 in: 39.0b4
 31 in: 39.0b4
 186 in: 39.0b4
+18 in: 39.0b5
+26 in: 39.0b5
+100 in: 39.0b5
 Bug 1170143 has a crash ranked:
 3 in: 39.0b
 3 in: 39.0b1
@@ -106,6 +122,7 @@ Bug 1170143 has a crash ranked:
 3 in: 39.0b2
 3 in: 39.0b3
 21 in: 39.0b4
+69 in: 39.0b5
 Bug 1171724 has a crash ranked:
 60 in: 39.0b
 69 in: 39.0b
@@ -113,6 +130,7 @@ Bug 1171724 has a crash ranked:
 91 in: 39.0b2
 34 in: 39.0b3
 30 in: 39.0b4
+30 in: 39.0b5
 Bug 1173579 has a crash ranked:
 100 in: 39.0b
 154 in: 39.0b
@@ -123,3 +141,5 @@ Bug 1173579 has a crash ranked:
 150 in: 39.0b3
 121 in: 39.0b4
 159 in: 39.0b4
+145 in: 39.0b5
+153 in: 39.0b5

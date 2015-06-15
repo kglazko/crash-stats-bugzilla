@@ -10,6 +10,8 @@ import datetime
 
 days = sys.argv[1]
 
+version = str(sys.argv[2])
+
 daysList = []
 
 print days
@@ -17,10 +19,11 @@ today = datetime.date.today()
 print today
 one_day = datetime.timedelta(days=1)
 
-for i in range (1,int(days)):
+for i in range (0,int(days)):
 	day = today - one_day * i
 	daysList.append(day)
 
+end_date = daysList[0] + one_day
  
 #CSV Code Set-Up
 #CSV CODE
@@ -49,7 +52,7 @@ url_list.append([])
 url_list.append([])
 
 #specify which fields I want to send to the bugzilla API
-url = 'https://bugzilla.mozilla.org/rest/bug?include_fields=id,cf_crash_signature,status&f1=cf_tracking_firefox39&f2=cf_crash_signature&o1=equals&o2=isnotempty&resolution=---&v1=%2B'
+url = 'https://bugzilla.mozilla.org/rest/bug?include_fields=id,cf_crash_signature,status&f1=cf_tracking_firefox' + version + '&f2=cf_crash_signature&o1=equals&o2=isnotempty&resolution=---&v1=%2B'
 
 #I'm grabbing the URL and turning it into a JSON string, which I will parse in the next call.
 search_results=requests.get(url)
@@ -90,14 +93,14 @@ for b in bugList:
 
 #Going through the crash_sigs strings, sending them to the crash-stats API, and returning a JSON object of their crash frequencies. And it doesn't work!
 for i in range (0, len(url_list[0])):
-		r = requests.get('https://crash-stats.mozilla.com/api/CrashesCountByDay/?signature='+ (url_list[0][i]) + '&start_date=2015-06-03&end_date=2015-06-10')
+		r = requests.get('https://crash-stats.mozilla.com/api/CrashesCountByDay/?signature='+ (url_list[0][i]) + '&start_date=' + str(daysList[len(daysList) -1]) + '&end_date=' + str(end_date))
 		jsonStr = json.loads(r.text)
 		if 'errors' not in jsonStr.keys():
 			for b in bugList:
 				for c in b.sigs:
 					if url_list[1][i] == c.iD:
 						for d in daysList:
-							c.crashWeek = c.crashWeek + jsonStr[str(d)]
+							c.crashWeek = c.crashWeek + jsonStr['hits'][str(d)]
 						
 
 
