@@ -137,12 +137,13 @@ if sendEmail == 'y':
 	sender = 'fakebugzilla@gmail.com'
 	receivers = 'kglazko@mozilla.com'
 	subject = 'Crashes for Dates ' + str(start_date) + " to " + str(today)
-	message = "Version " + version + '\n'+ "Bug I.D.      # of Crashes\n"
+	message = "Version " + version + '\n'+ "Bug I.D.                 # of Crashes                     Bug Link\n"
+	message = message + '-----------------------------------------------------------------------------------\n'
 	for b in bugList:
 		temp = 0
 		for c in b.sigs:
 			temp = temp + c.crashWeek
-		message = message + (str(b.iD)) + '      ' + (str(c.crashWeek)) + '\n'
+		message = message + (str(b.iD)) + '                          ' + (str(c.crashWeek)) + '                          ' + 'https://bugzilla.mozilla.org/show_bug.cgi?id='+ str(b.iD) + '\n'
 	msg = email.MIMEMultipart.MIMEMultipart()
 	msg['From'] = sender
 	msg['To'] = receivers
