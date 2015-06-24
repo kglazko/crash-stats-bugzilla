@@ -5,6 +5,7 @@ import simplejson
 import urllib
 import csv
 import sys
+#from commentMod import bug_comment
 
 
 bugList = []
@@ -162,3 +163,4 @@ file_object.close()
 #########		
 
 #####Now we just want to output the top 10 crashers in Excel###
+#bug_comment(1111, "hi")
