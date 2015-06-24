@@ -8,7 +8,7 @@ Good question. I'll explain each of the current scripts.
   2.  CrashExplore.py is currently retrieving a list of 39+ bugs, collecting their crash signatures, and returning the number of crashes per signature for the given time frame.
   
   3. InteractiveCrashNumber.py is a new program that you run with command line arguments.
-          InteractiveCrashNumber.py [numberOfDaysSinceToday] [Version]
+          InteractiveCrashNumber.py [numberOfDaysSinceToday] [Version] ['y' if you want to send an email report]
 
 
   3.  Ah, got you! There is no actual program for grabbing and sentiment analyzing user comments, but there will be! It is one of my personal goals for this project.
