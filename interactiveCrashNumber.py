@@ -135,7 +135,7 @@ f.close()
 ##### EMAIL SECTION ONLY #####
 if sendEmail == 'y':
 	sender = 'fakebugzilla@gmail.com'
-	receivers = 'kglazko@mozilla.com'
+	receivers = 'goosefraba@mailinator.com'
 	subject = 'Crashes for Dates ' + str(start_date) + " to " + str(today)
 	message = "Version " + version + '\n'+ "Bug I.D.                 # of Crashes                     Bug Link\n"
 	message = message + '-----------------------------------------------------------------------------------\n'
